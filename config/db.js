@@ -15,11 +15,11 @@ const postDbPool = mysql.createPool({
 		process.env.NODE_ENV === 'production'
 			? new URL(process.env.CLEARDB_CYAN_URL).password
 			: process.env.DB_PASSWORD,
-	database: process.env.DB_DATABASE_POST,
-	port:
+	database:
 		process.env.NODE_ENV === 'production'
-			? new URL(process.env.CLEARDB_CYAN_URL).port
-			: process.env.DB_PORT,
+			? new URL(process.env.CLEARDB_CYAN_URL).database
+			: process.env.DB_DATABASE_POST,
+	port: process.env.DB_PORT,
 	waitForConnections: true,
 	queueLimit: 0,
 });
@@ -38,11 +38,11 @@ const albumDbPool = mysql.createPool({
 		process.env.NODE_ENV === 'production'
 			? new URL(process.env.CLEARDB_CYAN_URL).password
 			: process.env.DB_PASSWORD,
-	database: process.env.DB_DATABASE_ALBUMS,
-	port:
+	database:
 		process.env.NODE_ENV === 'production'
-			? new URL(process.env.CLEARDB_CYAN_URL).port
-			: process.env.DB_PORT,
+			? new URL(process.env.CLEARDB_CYAN_URL).database
+			: process.env.DB_DATABASE_ALBUMS,
+	port: process.env.DB_PORT,
 	waitForConnections: true,
 	queueLimit: 0,
 });
@@ -61,11 +61,11 @@ const employeesDbPool = mysql.createPool({
 		process.env.NODE_ENV === 'production'
 			? new URL(process.env.CLEARDB_CYAN_URL).password
 			: process.env.DB_PASSWORD,
-	database: process.env.DB_DATABASE_EMPLOYEES,
-	port:
+	database:
 		process.env.NODE_ENV === 'production'
-			? new URL(process.env.CLEARDB_CYAN_URL).port
-			: process.env.DB_PORT,
+			? new URL(process.env.CLEARDB_CYAN_URL).database
+			: process.env.DB_DATABASE_EMPLOYEES,
+	port: process.env.DB_PORT,
 	waitForConnections: true,
 	queueLimit: 0,
 });
