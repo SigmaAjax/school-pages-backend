@@ -80,7 +80,8 @@ router.get('/all/employees', async (req, res) => {
 		res.status(500).json({
 			status: 'error',
 			message: 'Error fetching employees',
-			error: error.message,
+			error_message: error.message,
+			error: error,
 		});
 	}
 });
@@ -102,7 +103,8 @@ router.get('/employee/get/:id', async (req, res) => {
 		res.status(500).json({
 			status: 'error',
 			message: "Error fetching employee' detail",
-			error: error.message,
+			error_message: error.message,
+			error: error,
 		});
 	}
 });

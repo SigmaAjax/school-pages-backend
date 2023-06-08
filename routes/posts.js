@@ -20,6 +20,11 @@ router.get('/get', (req, res) => {
 			connection.release();
 			if (err) {
 				console.log(err);
+				res.status(500).json({
+					status: 'error',
+					message: 'Error fetching employees',
+					error: err.message,
+				});
 			}
 			res.send(result);
 		});

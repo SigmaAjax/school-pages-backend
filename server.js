@@ -55,5 +55,6 @@ const setDownloadHeader = (req, res, next) => {
 app.use('/files', setDownloadHeader, express.static(documentsDir));
 
 app.listen(port, (res, req) => {
+	res.send('Web is running');
 	console.log('your port is ', port);
 });

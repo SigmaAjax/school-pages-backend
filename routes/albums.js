@@ -111,7 +111,13 @@ router.get('/get/albums', async (req, res) => {
 	albumDbPool.getConnection(async (error, connection) => {
 		if (error) {
 			console.log(error.message);
-			res.status(500).send({message: 'Error obtaining a database connection'});
+			res
+				.status(500)
+				.send({
+					message: 'Error obtaining a database connection',
+					error_message: error.message,
+					error: error,
+				});
 			return;
 		}
 
