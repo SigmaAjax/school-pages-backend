@@ -1,14 +1,14 @@
 const mysql = require('mysql');
 require('dotenv').config();
 
-console.log({
-	Clear_db: process.env.CLEARDB_CYAN_URL,
-	space: '---------------',
-	hostname: new URL(process.env.CLEARDB_CYAN_URL).hostname,
-	username: new URL(process.env.CLEARDB_CYAN_URL).username,
-	password: new URL(process.env.CLEARDB_CYAN_URL).password,
-	database: process.env.CLEARDB_CYAN_NAME,
-});
+// console.log({
+// 	Clear_db: process.env.CLEARDB_CYAN_URL,
+// 	space: '---------------',
+// 	hostname: new URL(process.env.CLEARDB_CYAN_URL).hostname,
+// 	username: new URL(process.env.CLEARDB_CYAN_URL).username,
+// 	password: new URL(process.env.CLEARDB_CYAN_URL).password,
+// 	database: process.env.CLEARDB_CYAN_NAME,
+// });
 
 const postDbPool = mysql.createPool({
 	connectionLimit: 10,
