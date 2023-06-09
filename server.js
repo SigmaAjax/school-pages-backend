@@ -1,6 +1,7 @@
 const express = require('express');
 require('dotenv').config();
 const cors = require('cors');
+const {postDbPool, albumDbPool, employeesDbPool} = require('./config/db.js');
 const port = process.env.PORT || process.env.NODE_ENV_PORT;
 
 const app = express();
@@ -54,6 +55,17 @@ const setDownloadHeader = (req, res, next) => {
 // Serve files with the Content-Disposition header set to attachment
 app.use('/files', setDownloadHeader, express.static(documentsDir));
 
+app.get('/dbinfo', (req, res) => {
+	res.send({
+		postDbPool_config: postDbPool.config,
+		albumDbPool_config: albumDbPool.config,
+		employeesDbPool_config: employeesDbPool.config,
+	});
+});
+
 app.listen(port, (res, req) => {
 	console.log('your port is ', port);
+	console.log(`postDbPool config: `, postDbPool.config);
+	console.log(`albumDbPool config: `, albumDbPool.config);
+	console.log(`employeesDbPool config: `, employeesDbPool.config);
 });
