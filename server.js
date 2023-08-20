@@ -12,6 +12,7 @@ const corsOptions = {
 	origin: [
 		'http://localhost:3000',
 		'https://64aefdd8372b3b15b2d5836f--effortless-snickerdoodle-282c8b.netlify.app',
+		'*',
 	],
 	methods: ['GET', 'PUT', 'POST', 'DELETE', 'PATCH'],
 	allowedHeaders: ['Content-Type', 'Authorization'],
