@@ -11,11 +11,15 @@ const app = express();
 const corsOptions = {
 	origin: [
 		'http://localhost:3000',
-		'https://64aefdd8372b3b15b2d5836f--effortless-snickerdoodle-282c8b.netlify.app',
+		'https://64e2610ca489b60c4834d0fd--effortless-snickerdoodle-282c8b.netlify.app',
 		'*',
 	],
 	methods: ['GET', 'PUT', 'POST', 'DELETE', 'PATCH'],
-	allowedHeaders: ['Content-Type', 'Authorization'],
+	allowedHeaders: [
+		'Content-Type',
+		'Authorization',
+		'Access-Control-Allow-Origin',
+	],
 };
 
 app.use(cors(corsOptions));
